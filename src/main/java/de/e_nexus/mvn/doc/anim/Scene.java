@@ -84,6 +84,7 @@ public class Scene extends SizedAnimationObjectList {
 			if (frames() == 0) {
 				BufferedImage image = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
 				Graphics graphics = image.getGraphics();
+				graphics.setClip(0, 0, getWidth(), getHeight());
 				graphics.setColor(new Color(0, 0, 0, 125));
 				graphics.fillRect(0, 0, getWidth(), getHeight());
 				paintTiming(graphics, 0);
@@ -92,6 +93,7 @@ public class Scene extends SizedAnimationObjectList {
 				for (int i = 0; i < frames(); i++) {
 					BufferedImage image = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
 					Graphics graphics = image.getGraphics();
+					graphics.setClip(0, 0, getWidth(), getHeight());
 					graphics.setColor(new Color(0, 0, 0, 125));
 					graphics.fillRect(0, 0, getWidth(), getHeight());
 					paintTiming(graphics, i);

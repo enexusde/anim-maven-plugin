@@ -8,20 +8,18 @@ public class Point {
 	public final int y;
 
 	/**
+	 * <pre>
 	 * <img src=".test.gif#
 	 * bar at 20x20, size 15x15, fill 0xff0000
 	 * bar at 40x20, size 15x15, fill 0xff0000
 	 * bar at 60x20, size 15x15, fill 0xff0000
-	
 	 * bar at 45x40, size 5x5 after 20 frames, at 25x25 after 40 frames, at 25x25 after 20 frames, at 45x0
 	 * bar at 45x50, size 5x5 after 20 frames, at 45x25 after 5 frames, at 45x25 after 20 frames, at 45x0
 	 * bar at 45x60, size 5x5 after 20 frames, at 65x25 after 85 frames, at 65x25 after 25 frames, at 45x0
 	 * bar at 45x70, size 5x5 after 20 frames, at 45x40 after 15 frames, at 45x40 after 20 frames, at 45x25 after 20 frames, at 45x25 after 20 frames, at 45x0
 	 * bar at 45x80, size 5x5 after 20 frames, at 45x50 after 15 frames, at 45x50 after 25 frames, at 45x40 after 20 frames, at 25x25 after 5 frames, at 25x25 after 20 frames, at 45x0
-	 * bar at 45x90, size 5x5 after 20 frames, at 45x60 after 15 frames, at 45x60 after 20 frames, at 45x50 
-	 * bar at 45x100, size 5x5 after 20 frames, at 45x70 after 15 frames, at 45x70 after 20 frames, at 45x60
-	 * 
 	 * ">
+	 * </pre>
 	 * 
 	 * @param str
 	 * @throws IllegalCoordinatesException

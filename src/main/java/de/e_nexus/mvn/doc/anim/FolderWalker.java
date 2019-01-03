@@ -9,6 +9,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 import de.e_nexus.mvn.doc.anim.ex.AmibuousGifWriterImplementationException;
+import de.e_nexus.mvn.doc.anim.geo.ProgressIndicator;
 import de.e_nexus.mvn.doc.anim.geo.ex.IllegalColorException;
 import de.e_nexus.mvn.doc.anim.geo.ex.IllegalCoordinatesException;
 
@@ -56,6 +57,7 @@ public class FolderWalker {
 					currentScene = new Scene(targetFile);
 				} else if (currentScene != null && line.contains("\"")) {
 					anims.add(currentScene);
+					currentScene.add(new ProgressIndicator());
 					currentScene = null;
 				} else if (currentScene != null) {
 					currentScene.consume(line);
