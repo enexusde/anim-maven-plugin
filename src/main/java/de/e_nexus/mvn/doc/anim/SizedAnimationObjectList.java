@@ -51,7 +51,7 @@ public class SizedAnimationObjectList extends LinkedHashSet<AnimationObject<?>> 
 
 	public void paintTiming(Graphics graphics, int time) {
 		for (AnimationObject<?> ao : this) {
-			ao.paintRelative(graphics, AnimationObject.BORDER_WIDTH, AnimationObject.BORDER_WIDTH, time, frames());
+			ao.paintRelative(graphics, time, frames());
 		}
 	}
 }

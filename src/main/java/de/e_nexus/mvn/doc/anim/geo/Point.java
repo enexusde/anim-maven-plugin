@@ -7,23 +7,6 @@ public class Point {
 	public final int x;
 	public final int y;
 
-	/**
-	 * <pre>
-	 * <img src=".test.gif#
-	 * bar at 20x20, size 15x15, fill 0xff0000
-	 * bar at 40x20, size 15x15, fill 0xff0000
-	 * bar at 60x20, size 15x15, fill 0xff0000
-	 * bar at 45x40, size 5x5 after 20 frames, at 25x25 after 40 frames, at 25x25 after 20 frames, at 45x0
-	 * bar at 45x50, size 5x5 after 20 frames, at 45x25 after 5 frames, at 45x25 after 20 frames, at 45x0
-	 * bar at 45x60, size 5x5 after 20 frames, at 65x25 after 85 frames, at 65x25 after 25 frames, at 45x0
-	 * bar at 45x70, size 5x5 after 20 frames, at 45x40 after 15 frames, at 45x40 after 20 frames, at 45x25 after 20 frames, at 45x25 after 20 frames, at 45x0
-	 * bar at 45x80, size 5x5 after 20 frames, at 45x50 after 15 frames, at 45x50 after 25 frames, at 45x40 after 20 frames, at 25x25 after 5 frames, at 25x25 after 20 frames, at 45x0
-	 * ">
-	 * </pre>
-	 * 
-	 * @param str
-	 * @throws IllegalCoordinatesException
-	 */
 	public Point(String str) throws IllegalCoordinatesException {
 		int limiter = str.indexOf("x");
 		if (limiter == -1) {

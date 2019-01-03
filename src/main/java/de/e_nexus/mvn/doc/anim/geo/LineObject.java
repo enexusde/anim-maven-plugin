@@ -49,9 +49,9 @@ public class LineObject extends AnimationObject<KeyFrame> {
 	}
 
 	@Override
-	protected void paintRelative(Graphics graphics, int relX, int relY, int time, int maxTime) {
+	protected void paintRelative(Graphics graphics, int time, int maxTime) {
 		graphics.setColor(c);
-		graphics.drawLine(start.x + relX, start.y + relY, end.x + relX, end.y + relY);
+		graphics.drawLine(start.x, start.y, end.x, end.y);
 	}
 
 	@Override

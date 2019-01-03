@@ -30,7 +30,6 @@ public class BarObject extends AnimationObject<BarKeyFrame> {
 			last = keyFrame;
 			for (String kpi : keyframe.trim().split(",")) {
 				kpi = kpi.trim();
-				System.out.println(kpi);
 				if (kpi.startsWith("at ")) {
 					keyFrame.setPosition(new Point(kpi.substring(3)));
 				} else if (kpi.startsWith("size ")) {
@@ -85,11 +84,28 @@ public class BarObject extends AnimationObject<BarKeyFrame> {
 		return maxY;
 	}
 
+	/**
+	 * Draw the data to one frame (or subframe) of the .gif-file.
+	 * 
+	 * <p>
+	 * A line of : <tt> 
+	 * <ul>
+	 * <li>bar at 20x20, size 15x15, fill 0xff0000 after 1000 frames, at 100x20
+	 * </ul></tt> will be animated as:
+	 * 
+	 * <pre>
+	 * <img src="./doc-files/bar-paint-animated.gif#
+	 * bar at 20x20, size 15x15, fill 0xff0000 after 1000 frames, at 100x20
+	 * ">
+	 * </pre>
+	 * 
+	 * @throws IllegalCoordinatesException If the coordinates could not be parsed.
+	 */
 	@Override
-	protected void paintRelative(Graphics graphics, int relX, int relY, int time, int maxTime) {
+	protected void paintRelative(Graphics graphics, int time, int maxTime) {
 		for (BarKeyFrame barKeyFrame : keyFrames) {
 			if (barKeyFrame.getFrame() == time) {
-				paintRelative(graphics, relX, relY, barKeyFrame);
+				paintRelative(graphics, barKeyFrame);
 				return;
 			}
 		}
@@ -98,27 +114,25 @@ public class BarObject extends AnimationObject<BarKeyFrame> {
 
 		if (after == null && before == null) {
 		} else if (after == null) {
-			paintRelative(graphics, relX, relY, before);
+			paintRelative(graphics, before);
 		} else if (before == null) {
-			paintRelative(graphics, relX, relY, after);
+			paintRelative(graphics, after);
 		} else {
 
 			BarKeyFrame f = new BarKeyFrame();
 
 			int size = after.getFrame() - before.getFrame();
 			int b = time - before.getFrame();
-			System.out.println(b + "/" + size);
 			float factor = b * 1f / size;
-			System.out.println(factor);
 			f.setBorderColor(Subframe.sub(before.getBorderColor(), after.getBorderColor(), factor));
 			f.setFillColor(Subframe.sub(before.getFillColor(), after.getFillColor(), factor));
 			f.setSize(Subframe.sub(before.getSize(), after.getSize(), factor));
 			f.setPosition(Subframe.sub(before.getPosition(), after.getPosition(), factor));
-			paintRelative(graphics, relX, relY, f);
+			paintRelative(graphics, f);
 		}
 	}
 
-	private void paintRelative(Graphics graphics, int relX, int relY, BarKeyFrame f) {
+	private void paintRelative(Graphics graphics, BarKeyFrame f) {
 		if (f.getFillColor() != null) {
 			graphics.setColor(f.getFillColor());
 		} else {

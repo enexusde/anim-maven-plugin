@@ -50,6 +50,11 @@ public class Scene extends SizedAnimationObjectList {
 	}
 
 	public void write(File file) throws AmibuousGifWriterImplementationException {
+		file = file.toPath().normalize().toFile();
+		File folder = file.getParentFile();
+		if (!folder.exists() && !folder.mkdirs()) {
+			throw new RuntimeException("Folder " + folder + " could not be created!");
+		}
 		Iterator<ImageWriter> gw = ImageIO.getImageWritersByMIMEType("image/gif");
 		ImageWriter writer = gw.next();
 		if (gw.hasNext()) {

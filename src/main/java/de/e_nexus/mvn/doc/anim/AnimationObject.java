@@ -25,7 +25,7 @@ public abstract class AnimationObject<T extends KeyFrame> {
 	 * @param time    The frame number to paint.
 	 * @param maxTime The last frame to paint.
 	 */
-	protected abstract void paintRelative(Graphics frame, int relX, int relY, int time, int maxTime);
+	protected abstract void paintRelative(Graphics frame, int time, int maxTime);
 
 	protected T findBefore(int time) {
 		T clossest = null;

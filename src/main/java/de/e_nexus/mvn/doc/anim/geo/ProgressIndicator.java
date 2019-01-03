@@ -25,14 +25,14 @@ public class ProgressIndicator extends AnimationObject<PositionalKeyFrame> {
 	}
 
 	@Override
-	protected void paintRelative(Graphics graphics, int relX, int relY, int time, int maxTime) {
+	protected void paintRelative(Graphics graphics, int time, int maxTime) {
 		Rectangle clipBounds = graphics.getClipBounds();
 		graphics.setColor(Color.blue);
 		float w = 1f * clipBounds.width / maxTime;
 		w *= time;
 		graphics.drawLine(1, 2, Math.round(w), 2);
 		graphics.drawLine(1, 1, 1, 3);
-		graphics.drawLine(clipBounds.width-1, 1, clipBounds.width-1, 3);
+		graphics.drawLine(clipBounds.width - 1, 1, clipBounds.width - 1, 3);
 	}
 
 }
