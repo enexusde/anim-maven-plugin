@@ -29,6 +29,16 @@ import de.e_nexus.mvn.doc.anim.geo.ex.IllegalCoordinatesException;
 
 public class Scene extends SizedAnimationObjectList {
 
+	/**
+	 * The serial version UID.
+	 */
+	private static final long serialVersionUID = -579091395120570513L;
+	private final File gifFile;
+
+	public Scene(File targetGifFile) {
+		this.gifFile = targetGifFile;
+	}
+
 	public void consume(String line) throws IllegalCoordinatesException, IllegalColorException {
 		line = line.replace('*', ' ').trim();
 		if (line.startsWith("line ")) {
@@ -97,7 +107,9 @@ public class Scene extends SizedAnimationObjectList {
 			o.close();
 		} catch (Exception e) {
 		}
-		System.out.println(file.getAbsolutePath());
 	}
 
+	public File getGifFile() {
+		return gifFile;
+	}
 }

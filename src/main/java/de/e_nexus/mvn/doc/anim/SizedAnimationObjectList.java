@@ -3,8 +3,12 @@ package de.e_nexus.mvn.doc.anim;
 import java.awt.Graphics;
 import java.util.LinkedHashSet;
 
-public class SizedAnimationObjectList extends LinkedHashSet<AnimationObject> {
+public class SizedAnimationObjectList extends LinkedHashSet<AnimationObject<?>> {
 
+	/**
+	 * Serial version uid.
+	 */
+	private static final long serialVersionUID = -4604831582672705558L;
 	private int width, height;
 
 	public int getWidth() {
@@ -15,7 +19,7 @@ public class SizedAnimationObjectList extends LinkedHashSet<AnimationObject> {
 	private void calculateWidthAndHeight() {
 		int width = 1;
 		int height = 1;
-		for (AnimationObject e : this) {
+		for (AnimationObject<?> e : this) {
 			int ew = e.getWidth();
 			if (ew > width) {
 				width = ew;
@@ -36,7 +40,7 @@ public class SizedAnimationObjectList extends LinkedHashSet<AnimationObject> {
 
 	public int frames() {
 		int maxFrames = 0;
-		for (AnimationObject anim : this) {
+		for (AnimationObject<?> anim : this) {
 			int animFrames = anim.getFrames();
 			if (animFrames > maxFrames) {
 				maxFrames = animFrames;
@@ -46,8 +50,8 @@ public class SizedAnimationObjectList extends LinkedHashSet<AnimationObject> {
 	}
 
 	public void paintTiming(Graphics graphics, int time) {
-		for (AnimationObject ao : this) {
-			ao.paintRelative(graphics, AnimationObject.BORDER_WIDTH, AnimationObject.BORDER_WIDTH, time);
+		for (AnimationObject<?> ao : this) {
+			ao.paintRelative(graphics, AnimationObject.BORDER_WIDTH, AnimationObject.BORDER_WIDTH, time, frames());
 		}
 	}
 }

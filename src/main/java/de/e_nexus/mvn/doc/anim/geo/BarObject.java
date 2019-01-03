@@ -86,7 +86,7 @@ public class BarObject extends AnimationObject<BarKeyFrame> {
 	}
 
 	@Override
-	protected void paintRelative(Graphics graphics, int relX, int relY, int time) {
+	protected void paintRelative(Graphics graphics, int relX, int relY, int time, int maxTime) {
 		for (BarKeyFrame barKeyFrame : keyFrames) {
 			if (barKeyFrame.getFrame() == time) {
 				paintRelative(graphics, relX, relY, barKeyFrame);

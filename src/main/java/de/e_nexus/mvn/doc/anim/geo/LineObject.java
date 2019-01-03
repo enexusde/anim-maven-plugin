@@ -6,8 +6,9 @@ import java.awt.Graphics;
 import de.e_nexus.mvn.doc.anim.AnimationObject;
 import de.e_nexus.mvn.doc.anim.geo.ex.IllegalColorException;
 import de.e_nexus.mvn.doc.anim.geo.ex.IllegalCoordinatesException;
+import de.e_nexus.mvn.doc.anim.kf.KeyFrame;
 
-public class LineObject extends AnimationObject {
+public class LineObject extends AnimationObject<KeyFrame> {
 
 	private Point start;
 	private Point end;
@@ -48,7 +49,7 @@ public class LineObject extends AnimationObject {
 	}
 
 	@Override
-	protected void paintRelative(Graphics graphics, int relX, int relY, int time) {
+	protected void paintRelative(Graphics graphics, int relX, int relY, int time, int maxTime) {
 		graphics.setColor(c);
 		graphics.drawLine(start.x + relX, start.y + relY, end.x + relX, end.y + relY);
 	}

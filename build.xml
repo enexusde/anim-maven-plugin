@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="default">
+	<target name="default">
+		<taskdef name="anim" classname="de.e_nexus.ant.doc.AnimationTask" classpath="target/anim-maven-plugin-0.0.1-SNAPSHOT.jar" />
+		<anim />
+	</target>
+</project>
