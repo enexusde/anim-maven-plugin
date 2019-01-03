@@ -22,4 +22,3 @@ As you can see, the src-attribute is a multi-line attribute. Every line of the s
 | Is the gif part of the .jar?        | Depends! If the .gif is in the sub-directory named `doc-files` it is not part of the .jar | QA01 |
 | Is the formatter working correctly? | Depends! You must surround the `<img` by the `<pre>` tag.                                 | QA02 |
 | Is `doc-files` a package?           | No, its filtered from the java package structure                                          | QA03 |
-| 
