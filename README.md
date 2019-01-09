@@ -35,3 +35,10 @@ This is the default use in ant:
 	</target>
 </project>
 ```
+
+## Syntax
+
+| Command| Effect      | Example (simple)     | Example (complex)                                           |
+| ------ | ----------- | -------------------- | ----------------------------------------------------------- |
+| string | Draw a text | string 'Hello World' | string 'Move to left', at 100x10 after 100 frames, at 10x10 |
+
