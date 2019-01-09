@@ -17,7 +17,7 @@ import de.e_nexus.mvn.doc.anim.geo.ex.IllegalCoordinatesException;
 @Mojo(name = "generate")
 public class AnimationMojo extends AbstractMojo {
 
-	private final FolderWalker walker = new FolderWalker();
+	private final CodeLineWalker walker = new CodeLineWalker();
 
 	@SuppressWarnings("unchecked")
 	public void execute() throws MojoExecutionException, MojoFailureException {

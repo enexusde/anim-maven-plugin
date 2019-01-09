@@ -24,6 +24,7 @@ import org.w3c.dom.Node;
 import de.e_nexus.mvn.doc.anim.ex.AmibuousGifWriterImplementationException;
 import de.e_nexus.mvn.doc.anim.geo.BarObject;
 import de.e_nexus.mvn.doc.anim.geo.LineObject;
+import de.e_nexus.mvn.doc.anim.geo.StringObject;
 import de.e_nexus.mvn.doc.anim.geo.ex.IllegalColorException;
 import de.e_nexus.mvn.doc.anim.geo.ex.IllegalCoordinatesException;
 
@@ -45,7 +46,8 @@ public class Scene extends SizedAnimationObjectList {
 			add(new LineObject(line));
 		} else if (line.startsWith("bar ")) {
 			add(new BarObject(line));
-
+		} else if (line.startsWith(StringObject.STRING_ANIMATION_PREFIX)) {
+			add(new StringObject(line));
 		}
 	}
 

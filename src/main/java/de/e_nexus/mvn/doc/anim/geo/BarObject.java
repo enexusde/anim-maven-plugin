@@ -95,7 +95,8 @@ public class BarObject extends AnimationObject<BarKeyFrame> {
 	 * 
 	 * <pre>
 	 * <img src="./doc-files/bar-paint-animated.gif#
-	 * bar at 20x20, size 15x15, fill 0xff0000 after 1000 frames, at 100x20
+	 * bar at 20x20, size 15x15, fill 0xff0000 after 100 frames, at 100x20
+	 * string at 10x40, 'test' after 20 frames, at 90x40 after 20 frames, at 10x40 after 60 frames, at 90x40 
 	 * ">
 	 * </pre>
 	 * 
