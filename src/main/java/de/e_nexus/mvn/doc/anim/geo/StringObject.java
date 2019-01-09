@@ -16,7 +16,6 @@ public class StringObject extends AbstractFontObject {
 		int lastFrame = 0;
 		for (String string : line.split(" after ")) {
 			string = string.trim();
-			String[] split = string.split("'");
 			StringKeyFrame kf = new StringKeyFrame();
 			kf.setText(lastText);
 			for (String f : string.split(",")) {
@@ -41,12 +40,12 @@ public class StringObject extends AbstractFontObject {
 
 	@Override
 	public int getWidth() {
-		return (int) getMax().getWidth();
+		return (int) getMax().getX();
 	}
 
 	@Override
 	public int getHeight() {
-		return (int) getMax().getHeight();
+		return (int) getMax().getY();
 
 	}
 
