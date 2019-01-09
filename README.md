@@ -38,7 +38,7 @@ This is the default use in ant:
 
 ## Syntax
 
-| Command| Effect      | Example (simple)     | Example (complex)                                           |
-| ------ | ----------- | -------------------- | ----------------------------------------------------------- |
-| string | Draw a text | string 'Hello World' | string 'Move to left', at 100x10 after 100 frames, at 10x10 |
-
+| Command| Effect      | Example (simple)     | Example (complex)                                           | Result (complex) |
+| ------ | ----------- | -------------------- | ----------------------------------------------------------- | ---------------- |
+| string | Draw a text | string 'Hello World' | string 'Move to left', at 100x10 after 100 frames, at 10x10 | ![x](src/main/site/string-animate.gif) |
+| bar    | Draw a block| block size 10x10     | bar size 10x10, border 0x000000, bg 0xeeeeee, at 20x20 after 20 frames, at 10x20, size 30x10 | ![x](src/main/site/bar-animate.gif) |
