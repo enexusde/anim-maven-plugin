@@ -1,3 +1,5 @@
+![Java CI with Maven](https://github.com/enexusde/anim-maven-plugin/workflows/Java%20CI%20with%20Maven/badge.svg)
+
 # anim-maven-plugin
 Generate gif-animations to documentate multitasking/asynchronuous processes.
 
